@@ -1,0 +1,27 @@
+version: 2
+
+models:
+
+  - name: fct_daily_sales
+
+    description: >
+      Aggregated daily sales metrics used
+      by analytics applications.
+
+    columns:
+
+      - name: order_date
+
+        data_tests:
+          - unique
+          - not_null
+
+      - name: total_orders
+
+        data_tests:
+          - not_null
+
+      - name: revenue
+
+        data_tests:
+          - not_null
