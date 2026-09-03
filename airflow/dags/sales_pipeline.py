@@ -32,5 +32,7 @@ with DAG(
         cd /opt/airflow/dbt/sales_dw &&
         dbt test --profiles-dir .
         """
-
+    default_args = {
+        "retries": 2,
+    }
     start() >> ingest() >> dbt_run() >> dbt_test()

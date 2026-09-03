@@ -14,3 +14,11 @@ CREATE TABLE IF NOT EXISTS raw.sales(
     ingestion_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     source_file VARCHAR(255)
 );
+
+CREATE TABLE raw.ingestion_control (
+
+    file_name VARCHAR(255) PRIMARY KEY,
+    processed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    records_loaded INTEGER
+
+);
