@@ -1,5 +1,7 @@
 from datetime import datetime
+
 from airflow.sdk import DAG, task
+from airflow.providers.standard.operators.bash import BashOperator
 
 
 default_args = {
@@ -25,18 +27,20 @@ with DAG(
         from ingestion.main import main
         main()
 
-    @task.bash
-    def dbt_run():
-        return """
+    dbt_run = BashOperator(
+        task_id="dbt_run",
+        bash_command="""
         cd /opt/airflow/dbt/sales_dw &&
         dbt run --profiles-dir .
-        """
+        """,
+    )
 
-    @task.bash
-    def dbt_test():
-        return """
+    dbt_test = BashOperator(
+        task_id="dbt_test",
+        bash_command="""
         cd /opt/airflow/dbt/sales_dw &&
         dbt test --profiles-dir .
-        """
+        """,
+    )
 
-    start() >> ingest() >> dbt_run() >> dbt_test()
+    start() >> ingest() >> dbt_run >> dbt_test
