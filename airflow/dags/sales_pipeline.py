@@ -1,12 +1,19 @@
 from datetime import datetime
-from airflow import DAG, task
+from airflow.sdk import DAG, task
+
+
+default_args = {
+    "retries": 2,
+}
+
 
 with DAG(
     dag_id="sales_data_pipeline",
     start_date=datetime(2026, 8, 1),
-    schedule="@daily",
+    schedule=None,
     catchup=False,
     tags=["portfolio", "data-engineering"],
+    default_args=default_args,
 ) as dag:
 
     @task
@@ -16,7 +23,6 @@ with DAG(
     @task
     def ingest():
         from ingestion.main import main
-
         main()
 
     @task.bash
@@ -32,7 +38,5 @@ with DAG(
         cd /opt/airflow/dbt/sales_dw &&
         dbt test --profiles-dir .
         """
-    default_args = {
-        "retries": 2,
-    }
+
     start() >> ingest() >> dbt_run() >> dbt_test()

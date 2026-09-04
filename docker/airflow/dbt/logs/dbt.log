@@ -1,0 +1,24 @@
+[0m23:12:15.708038 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000163176B27B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016319E77ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016319E779D0>]}
+
+
+============================== 23:12:15.711655 | cf97790b-9a15-4158-9c5b-d2056c57ac79 ==============================
+[0m23:12:15.711655 [info ] [MainThread]: Running with dbt=1.12.3
+[0m23:12:15.712437 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Alisson\\.dbt', 'use_colors': 'True', 'hints_enabled': 'True', 'invocation_command': 'dbt init sales_dw', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'logs'}
+[0m23:12:15.730384 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\Alisson\.dbt
+[0m23:12:15.732623 [debug] [MainThread]: Starter project path: C:\Dev\Projetos\data-engineering\sales-data-pipeline-os\.venv\Lib\site-packages\dbt\include\starter_project
+[0m23:12:15.756822 [info ] [MainThread]: Setting up your profile.
+[0m23:31:34.553952 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207C22E67B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207C4AE7D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207C4AE7890>]}
+
+
+============================== 23:31:34.557927 | 2a782f70-e740-4fe1-a2f8-02a7b303a05d ==============================
+[0m23:31:34.557927 [info ] [MainThread]: Running with dbt=1.12.3
+[0m23:31:34.558531 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'static_parser': 'True', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Alisson\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt run', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'logs'}
+[0m23:31:34.559027 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Dev\Projetos\data-engineering\sales-data-pipeline-os\dbt\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m23:31:34.559814 [debug] [MainThread]: Command `dbt run` failed at 23:31:34.559725 after 0.13 seconds
+[0m23:31:34.560082 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207C4B40D60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207C4A9AD50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207C4B1EE00>]}
+[0m23:31:34.560355 [debug] [MainThread]: Flushing usage events
+[0m23:31:35.412495 [debug] [MainThread]: An error was encountered while trying to flush usage events
