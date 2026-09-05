@@ -1,0 +1,4 @@
+order_id,customer_id,product_id,quantity,unit_price,order_date
+1018,505,P220,2,29.90,2026-09-04
+1019,502,P231,3,49.90,2026-09-04
+1020,506,P222,3,199.90,2026-09-04
